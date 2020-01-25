@@ -69,12 +69,12 @@ int main()
         Print();
     }
 
-    char choice;
+    char ch;
     int pos;
-    printf("Would you like to delete a number?\n");
-    scanf("%c", &choice);
+    printf("Would you like to delete a number?");
+    scanf("%s", &ch);
 
-    if (choice == 'y' || choice == 'Y')
+    if (ch == 'y' || ch == 'Y')
     {
         printf("Which position do you want to delete?\n");
         scanf("%d", &pos);

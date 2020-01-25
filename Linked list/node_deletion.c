@@ -7,26 +7,38 @@ struct Node
     struct Node *link;
 } Node;
 
-struct Node *head; // pointer to store address to the first node
+struct Node *header_address; // pointer to store address to the first node
 
 // Insert an integer at the END of the list
-void Insert(int data)
+void Insert(int user_number)
 {
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    (*temp).data = user_number;
+    (*temp).link = header_address;
+    header_address = temp;
 }
 
 // print all the elements in the list
 void Print()
 {
+    struct Node *temp1 = header_address;
+    printf("The linked list is: ");
+    while (temp1 != NULL)
+    {
+        printf("%d ", (*temp1).data);
+        temp1 = (*temp1).link;
+    }
+    printf("\n");
 }
 
 // Delete node at position n
 void Delete(int n)
 {
-    struct Node *temp1 = head; // creating a copy of head pointer
+    struct Node *temp1 = header_address; // creating a copy of head pointer
 
     if (n == 1)
     {
-        head = temp1->link; // head now points to second node
+        header_address = temp1->link; // head now points to second node
         free(temp1);
         return;
     }
@@ -43,7 +55,9 @@ void Delete(int n)
 
 int main()
 {
-    head = NULL; // the list is empty
+    header_address = NULL; // the list is empty
+
+    // driver program for testing
     Insert(2);
     Insert(89);
     Insert(4);
