@@ -46,4 +46,6 @@ int main()
         Insert(x); // inserting in the linked_list
         Print();   // Printing out the linked_list
     }
+
+    return 0;
 }
