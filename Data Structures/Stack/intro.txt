@@ -1,0 +1,22 @@
+# Stack as an abstarct data type:
+    A list with the restriction that insertion and
+    deletion can be performed only from one end, the top.
+
+=> stack is LiFo: The latest(last) item to be inserted the
+    is the firt item to be removed.
+
+# Operations:
+    Push(x): An insertion of item on top of stack
+    Pop(): Removes the most recent items on top of stack
+    Top(): returns the topmost item on the stack
+    IsEmpty(): returns true if the stack is empty
+
+    => We can push or pop only one element at a time
+    => All these operations can be performed in constant time
+
+stack can be visualised as a jar which is only open from the top
+
+Applications:
+    - function calls/recursion
+    - implement undo operation in a text editor
+    - balanced parenthesis(checked by compiler)
