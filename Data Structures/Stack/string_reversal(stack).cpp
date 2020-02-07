@@ -71,20 +71,18 @@ void Stack::Print()
 
 int main()
 {
-    cout << "Enter a ten string of length 10: " << endl;
+    cout << "Enter a string of length 10: " << endl;
 
     Stack S;
     // this array declaration is different from the one used in above method definitions
     // This is used ONLY for taking in inputs
-    char array[10];
-    for (int i = 0; i < 10; i++)
-    {
-        cin >> array[i];
-    }
+    char c_array[10];
+    gets(c_array);
 
-    for (int i = 0; i < sizeof(array); i++)
+    // performing relevent operations
+    for (int i = 0; i < sizeof(c_array); i++)
     {
-        S.Push(array[i]);
+        S.Push(c_array[i]);
     }
     S.Print();
 
